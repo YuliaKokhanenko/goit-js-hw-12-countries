@@ -1,0 +1,27 @@
+{{!-- название, столица, население, языки и флаг. --}}
+
+{{#each this}}
+<p class="country-name"><b>{{name}}</b></p>
+
+<ul class="country-data">
+ <div><li class="data-item"><b>Capital:</b> {{capital}}</li>
+<li class="data-item"><b>Population:</b> {{population}}</li>
+<li class="data-item"><b>Languages:</b>
+
+    <ul class="languages">
+        {{#each languages}}
+        <li class="data-item">{{this.name}}</li>
+        {{/each}}
+
+    </ul>
+</li>
+</div>
+ <div>
+    <li class="data-item"><img src="{{flag}}" alt="{{name}}"></li>
+ </div>
+   
+       
+   
+    
+</ul>
+{{/each}}
