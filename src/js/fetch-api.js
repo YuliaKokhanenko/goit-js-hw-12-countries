@@ -10,7 +10,7 @@ const refs = getRefs();
 refs.input.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(e) {
-  const inputValue = e.target.value;
+  const inputValue = e.target.value.trim();
    
   if (inputValue !== '') {
    API.fetchCountry(inputValue).then(renderCountryCard);
@@ -33,6 +33,5 @@ function renderCountryCard(country) {
   } else if (length > 10) {
        refs.card.innerHTML = '';
 notification()
- 
   }
 }
